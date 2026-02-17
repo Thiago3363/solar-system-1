@@ -8,7 +8,7 @@ const HeroSection = () => {
         alt="Painéis solares"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 container mx-auto px-8 md:px-16 lg:px-24">
         <div className="max-w-xl animate-slide-in-left bg-accent/80 backdrop-blur-sm rounded-3xl p-8 md:p-12">
