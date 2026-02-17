@@ -10,8 +10,8 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-hero" />
 
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="max-w-xl animate-slide-in-left">
+      <div className="relative z-10 container mx-auto px-8 md:px-16 lg:px-24">
+        <div className="max-w-xl animate-slide-in-left bg-accent/80 backdrop-blur-sm rounded-3xl p-8 md:p-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-4">
             Fixação solar desenvolvida para quem projeta e instala
           </h1>
