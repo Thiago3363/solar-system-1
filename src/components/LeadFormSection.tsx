@@ -1,14 +1,46 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Phone, PhoneCall, Mail } from "lucide-react";
 import girlImg from "@/assets/girl.png";
 
-const LeadFormSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+// Declaração para evitar erro de TypeScript com o objeto global do RD
+declare global {
+  interface Window {
+    RDStationForms: {
+      new (
+        formId: string,
+        accountId: string,
+      ): {
+        createForm: () => void;
+      };
+    };
+  }
+}
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // placeholder
-  };
+const LeadFormSection = () => {
+  useEffect(() => {
+    // Criação do script principal do RD Station
+    const script = document.createElement("script");
+    script.src =
+      "https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js";
+    script.async = true;
+
+    script.onload = () => {
+      // Inicia o formulário assim que o script carregar
+      if (window.RDStationForms) {
+        new window.RDStationForms(
+          "form-solarsystem-41430e57d0b4b0e22666",
+          "null",
+        ).createForm();
+      }
+    };
+
+    document.body.appendChild(script);
+
+    // Limpeza ao desmontar o componente
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section id="contato" className="py-20 bg-solar-gray">
@@ -17,53 +49,23 @@ const LeadFormSection = () => {
           Solar System
         </p>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground text-center mb-12">
-          Solicite uma <span className="text-gradient-orange">análise técnica</span>
+          Solicite uma{" "}
+          <span className="text-gradient-orange">análise técnica</span>
         </h2>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
           <div className="flex-shrink-0 w-64 lg:w-80">
-            <img src={girlImg} alt="Profissional Solar System" className="w-full" />
+            <img
+              src={girlImg}
+              alt="Profissional Solar System"
+              className="w-full"
+            />
           </div>
 
           <div className="flex-1 w-full">
             <div className="bg-card rounded-3xl p-8 shadow-card">
-              <h3 className="text-xl font-bold text-primary mb-6">Formulário do RD</h3>
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <input
-                  type="text"
-                  placeholder="Seu nome"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-                <input
-                  type="email"
-                  placeholder="Seu e-mail"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-                <input
-                  type="tel"
-                  placeholder="Seu telefone"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                />
-                <textarea
-                  placeholder="Mensagem (opcional)"
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                />
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity"
-                >
-                  Enviar solicitação
-                </button>
-              </form>
+              {/* O formulário do RD será injetado aqui dentro */}
+              <div role="main" id="form-solarsystem-41430e57d0b4b0e22666"></div>
             </div>
           </div>
         </div>
@@ -76,7 +78,7 @@ const LeadFormSection = () => {
             <Phone size={16} /> (11) 98159 3526
           </a>
           <a
-            href="tel:+5511981593526"
+            href="https://wa.me/5511981593526"
             className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-primary text-primary-foreground text-sm font-semibold"
           >
             <PhoneCall size={16} /> (11) 98159 3526

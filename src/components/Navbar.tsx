@@ -29,13 +29,13 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="#catalogo"
+            href="https://solarsystem.ind.br/catálogo.pdf"
             className="px-5 py-2.5 rounded-2xl bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Ver Catálogo
           </a>
           <a
-            href="https://wa.me/5511981593526"
+            href="https://api.whatsapp.com/send?phone=5511981593526&text=Ol%C3%A1,%20tenho%20interesse%20nos%20produtos%20da%20Solar%20System!"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-2xl bg-whatsapp text-whatsapp-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -68,10 +68,18 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex gap-3 mt-4">
-            <a href="#catalogo" className="px-5 py-2.5 rounded-2xl bg-primary text-primary-foreground text-sm font-semibold">
+            <a
+              href="https://solarsystem.ind.br/catálogo.pdf"
+              className="px-5 py-2.5 rounded-2xl bg-primary text-primary-foreground text-sm font-semibold"
+            >
               Ver Catálogo
             </a>
-            <a href="https://wa.me/5511981593526" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-2xl bg-whatsapp text-whatsapp-foreground text-sm font-semibold">
+            <a
+              href="https://wa.me/5511981593526"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-2xl bg-whatsapp text-whatsapp-foreground text-sm font-semibold"
+            >
               WhatsApp
             </a>
           </div>

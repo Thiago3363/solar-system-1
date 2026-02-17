@@ -2,7 +2,10 @@ import heroImg from "@/assets/hero.png";
 
 const HeroSection = () => {
   return (
-    <section id="início" className="relative min-h-[600px] lg:min-h-[700px] flex items-center mt-16 overflow-hidden">
+    <section
+      id="início"
+      className="relative min-h-[600px] lg:min-h-[700px] flex items-center mt-16 overflow-hidden"
+    >
       <img
         src={heroImg}
         alt="Painéis solares"
@@ -16,10 +19,11 @@ const HeroSection = () => {
             Fixação solar desenvolvida para quem projeta e instala
           </h1>
           <p className="text-primary-foreground/80 text-lg mb-8 max-w-md">
-            Projetadas para segurança, durabilidade e eficiência em instalações solares.
+            Projetadas para segurança, durabilidade e eficiência em instalações
+            solares.
           </p>
           <a
-            href="#contato"
+            href="https://api.whatsapp.com/send?phone=5511981593526&text=Ol%C3%A1,%20tenho%20interesse%20nos%20produtos%20da%20Solar%20System!"
             className="inline-block px-8 py-4 rounded-2xl bg-secondary text-secondary-foreground font-bold text-base hover:opacity-90 transition-opacity shadow-solar"
           >
             Entrar em contato

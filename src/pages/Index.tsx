@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SocialProof from "@/components/SocialProof";
+{
+  /*import SocialProof from "@/components/SocialProof";*/
+}
 import BenefitsSection from "@/components/BenefitsSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import ProductsSection from "@/components/ProductsSection";
@@ -13,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <SocialProof />
+      {/*<SocialProof /> */}
       <BenefitsSection />
       <CategoriesSection />
       <ProductsSection />

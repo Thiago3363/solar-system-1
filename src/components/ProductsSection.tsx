@@ -40,7 +40,8 @@ const ProductsSection = () => {
           Linha Flex System
         </h2>
         <p className="text-muted-foreground mb-8">
-          Estruturas desenvolvidas para diferentes tipos de instalação fotovoltaica.
+          Estruturas desenvolvidas para diferentes tipos de instalação
+          fotovoltaica.
         </p>
 
         {/* Category Tabs */}
@@ -70,7 +71,9 @@ const ProductsSection = () => {
               <div className="w-28 h-28 bg-solar-gray-dark/30 rounded-xl mb-4 flex items-center justify-center">
                 <div className="w-20 h-20 bg-solar-gray-dark/50 rounded-lg" />
               </div>
-              <h4 className="text-sm font-bold text-foreground mb-4">{p.name}</h4>
+              <h4 className="text-sm font-bold text-foreground mb-4">
+                {p.name}
+              </h4>
               <button className="w-9 h-9 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:opacity-90 transition-opacity">
                 <ArrowRight size={16} />
               </button>
@@ -80,7 +83,7 @@ const ProductsSection = () => {
 
         <div className="text-center">
           <a
-            href="#catalogo"
+            href="https://solarsystem.ind.br/catálogo.pdf"
             className="inline-block px-8 py-3 rounded-2xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity"
           >
             Ver mais
