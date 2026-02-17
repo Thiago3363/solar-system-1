@@ -44,7 +44,7 @@ const ProductsSection = () => {
         </p>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {(Object.keys(categoryLabels) as Category[]).map((cat) => (
             <button
               key={cat}
